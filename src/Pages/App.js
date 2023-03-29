@@ -1,6 +1,7 @@
 import './App.css';
 
 import SearchBar from './Components/SearchBar/SearchBar.component';
+import SearchResults from './Components/SearchResults/SearchResults.component';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className="App">
         <SearchBar />
         <div className="App-playlist">
+          <SearchResults />
         </div>
       </div>
     </div>
@@ -17,6 +19,4 @@ function App() {
 
 export default App;
 
-// SearchBar: 8
-// SearchResults: 10
 // Playlist: 11
