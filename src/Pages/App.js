@@ -1,5 +1,6 @@
 import './App.css';
 
+import Playlist from './Components/Playlist/Playlist.component';
 import SearchBar from './Components/SearchBar/SearchBar.component';
 import SearchResults from './Components/SearchResults/SearchResults.component';
 
@@ -11,6 +12,7 @@ function App() {
         <SearchBar />
         <div className="App-playlist">
           <SearchResults />
+          <Playlist />
         </div>
       </div>
     </div>
@@ -18,5 +20,3 @@ function App() {
 }
 
 export default App;
-
-// Playlist: 11
