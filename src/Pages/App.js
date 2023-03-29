@@ -25,10 +25,15 @@ class App extends React.Component {
       ]
     }
 
+    this.search = this.search.bind(this);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
+  }
+
+  search(query) {
+    console.log(query);
   }
 
   addTrack(track) {
@@ -58,7 +63,7 @@ class App extends React.Component {
       <div>
         <h1><span className="highlight">Playlist</span>-ify</h1>
         <div className="App">
-          <SearchBar />
+          <SearchBar onSearch={this.search} />
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
             <Playlist name={this.state.playlistName} tracks={this.state.playlistTracks} onSave={this.savePlaylist} onRemove={this.removeTrack} onNameChange={this.updatePlaylistName} />
