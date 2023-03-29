@@ -1,6 +1,7 @@
 import './App.css';
 
 import React from 'react';
+// import Spotify from '../Util/Spotify';
 
 import Playlist from '../Components/Playlist/Playlist.component';
 import SearchBar from '../Components/SearchBar/SearchBar.component';
@@ -11,12 +12,27 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      playlistName: 'New Playlist',
       searchResults: [
-        { id: 1, name: 'qwe', album: 'iop', artist: 'titi', isRemoval: false },
-        { id: 2, name: 'asd', album: 'jkl', artist: 'toto', isRemoval: true },
-        { id: 3, name: 'zxc', album: 'bnm', artist: 'tata', isRemoval: false }
+        { name: 'qwe', album: 'iop', artist: 'titi' },
+        { name: 'asd', album: 'jkl', artist: 'toto' },
+        { name: 'zxc', album: 'bnm', artist: 'tata' }
+      ],
+      playlistTracks: [
+        { name: 'qwe', album: 'iop', artist: 'titi' },
+        { name: 'asd', album: 'jkl', artist: 'toto' },
+        { name: 'zxc', album: 'bnm', artist: 'tata' }
       ]
     }
+
+    this.addTrack = this.addTrack.bind(this);
+  }
+
+  addTrack(track) {console.log('addTrack at APp', track)
+    let tracks = this.state.playlistTracks;
+    tracks.push(track);
+
+    this.setState({playlistTracks: tracks});
   }
 
   render() {
@@ -26,8 +42,8 @@ class App extends React.Component {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults results={this.state.searchResults} />
-            <Playlist />
+            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
+            <Playlist name={this.state.playlistName} tracks={this.state.playlistTracks} />
           </div>
         </div>
       </div>
