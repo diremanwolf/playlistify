@@ -1,8 +1,8 @@
 import './App.css';
 
-import Playlist from './Components/Playlist/Playlist.component';
-import SearchBar from './Components/SearchBar/SearchBar.component';
-import SearchResults from './Components/SearchResults/SearchResults.component';
+import Playlist from '../Components/Playlist/Playlist.component';
+import SearchBar from '../Components/SearchBar/SearchBar.component';
+import SearchResults from '../Components/SearchResults/SearchResults.component';
 
 function App() {
   return (

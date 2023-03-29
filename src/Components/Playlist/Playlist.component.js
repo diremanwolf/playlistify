@@ -1,7 +1,7 @@
+import './Playlist.component.css';
+
 import React from 'react';
 import TrackList from '../TrackList/TrackList.component';
-
-import './Playlist.component.css';
 
 class Playlist extends React.Component {
   render() {
